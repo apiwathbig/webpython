@@ -43,6 +43,7 @@ sp_len=st.number_input("กรุณาเลือกข้อมูล sepal.l
 sp_wd=st.number_input("กรุณาเลือกข้อมูล sepall.width")
 
 if st.button("ทำนายผล"):
+   st.image("./pic/01.png")
    loaded_model = pickle.load(open('./data/trained_model.sav', 'rb'))
    input_data =  (pt_len,pt_wd,sp_len,sp_wd)
    # changing the input_data to numpy array
@@ -50,8 +51,13 @@ if st.button("ทำนายผล"):
     # reshape the array as we are predicting for one instance
    input_data_reshaped = input_data_as_numpy_array.reshape(1,-1)
    prediction = loaded_model.predict(input_data_reshaped)
-
    st.write(prediction)
+   if prediction == 'Versicolor':
+        st.image("./pic/01.png")
+   elif prediction == 'Versicolor':
+        st.write("yyyy")
+   else:
+        st.write("zzzz")
    st.button("ไม่แสดงข้อมูล")
 else:
    st.write("ไม่แสดงข้อมูล")
