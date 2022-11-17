@@ -17,7 +17,7 @@ html_8="""
 st.markdown(html_8,unsafe_allow_html=True)
 st.markdown("")
 
-dt=pd.read_csv("./data/water_potability.csv")
+dt=pd.read_h5("./data/ann.h5")
 st.write(dt.head(10))
 data1 = dt['ph'].sum()
 data2 = dt['Hardness'].sum()
