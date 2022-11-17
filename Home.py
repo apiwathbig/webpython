@@ -57,7 +57,7 @@ w_tur=st.slider("กรุณาเลือกข้อมูล Turbidity")
 
 
 if st.button("ทำนายผล"):
-   loaded_model = pickle.load(open('./data/ann.sav', 'rb'))
+   loaded_model = pickle.load(open('./data/ANN.h5'))
    input_data =  (w_ph,w_ha,w_so,w_ch,w_s,w_c,w_Or,w_Tri,w_Tur)
    # changing the input_data to numpy array
    input_data_as_numpy_array = np.asarray(input_data)
