@@ -17,14 +17,19 @@ html_8="""
 st.markdown(html_8,unsafe_allow_html=True)
 st.markdown("")
 
-dt=pd.read_csv("./data/iris.csv")
+dt=pd.read_csv("./data/water_potability.csv")
 st.write(dt.head(10))
-data1 = dt['sepal.length'].sum()
-data2 = dt['sepal.width'].sum()
-data3 = dt['petal.length'].sum()
-data4 = dt['petal.width'].sum()
-dx=[data1,data2,data3,data4]
-dx2=pd.DataFrame(dx, index=["d1", "d2", "d3", "d4"])
+data1 = dt['ph'].sum()
+data2 = dt['Hardness'].sum()
+data3 = dt['Solids'].sum()
+data4 = dt['Chloramines'].sum()
+data5 = dt['Sulfate'].sum()
+data6 = dt['Conductivity'].sum()
+data7 = dt['Organic_carbon'].sum()
+data8 = dt['Trihalomethanes'].sum()
+data9 = dt['Turbidity'].sum()
+dx=[data1,data2,data3,data4,data5,data6,data7,data8,data9]
+dx2=pd.DataFrame(dx, index=["d1", "d2", "d3", "d4", "d5", "d6", "d7", "d8", "d9"])
 if st.button("แสดงการจินตทัศน์ข้อมูล"):
    st.area_chart(dx2)
    st.button("ไม่แสดงข้อมูล")
@@ -39,14 +44,21 @@ html_8="""
 st.markdown(html_8,unsafe_allow_html=True)
 st.markdown("")
 
-pt_len=st.slider("กรุณาเลือกข้อมูล petal.length")
-pt_wd=st.slider("กรุณาเลือกข้อมูล petal.width")
-sp_len=st.number_input("กรุณาเลือกข้อมูล sepal.length")
-sp_wd=st.number_input("กรุณาเลือกข้อมูล sepall.width")
+w_ph=st.number_input("กรุณาเลือกข้อมูล ph")
+w_ha=st.number_input("กรุณาเลือกข้อมูล Hardness")
+w_so=st.number_input("กรุณาเลือกข้อมูล Solids")
+w_ch=st.number_input("กรุณาเลือกข้อมูล Chloramines")
+w_s=st.slider("กรุณาเลือกข้อมูล Sulfate")
+w_c=st.slider("กรุณาเลือกข้อมูล Conductivity")
+w_Or=st.slider("กรุณาเลือกข้อมูล Organic_carbon")
+w_Tri=st.slider("กรุณาเลือกข้อมูล Trihalomethanes")
+w_Tur=st.slider("กรุณาเลือกข้อมูล Turbidity")
+
+w_ph,w_ha,w_so,w_ch,w_s,w_c,w_Or,w_Tri,w_Tur
 
 if st.button("ทำนายผล"):
-   loaded_model = pickle.load(open('./data/trained_model.sav', 'rb'))
-   input_data =  (pt_len,pt_wd,sp_len,sp_wd)
+   loaded_model = pickle.load(open('./data/water_trained_model.sav', 'rb'))
+   input_data =  (w_ph,w_ha,w_so,w_ch,w_s,w_c,w_Or,w_Tri,w_Tur)
    # changing the input_data to numpy array
    input_data_as_numpy_array = np.asarray(input_data)
     # reshape the array as we are predicting for one instance
