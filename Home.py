@@ -54,7 +54,7 @@ w_Or=st.slider("กรุณาเลือกข้อมูล Organic_carbon"
 w_Tri=st.slider("กรุณาเลือกข้อมูล Trihalomethanes")
 w_Tur=st.slider("กรุณาเลือกข้อมูล Turbidity")
 
-w_ph,w_ha,w_so,w_ch,w_s,w_c,w_Or,w_Tri,w_Tur
+
 
 if st.button("ทำนายผล"):
    loaded_model = pickle.load(open('./data/water_trained_model.sav', 'rb'))
