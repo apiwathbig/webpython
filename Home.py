@@ -44,15 +44,15 @@ html_8="""
 st.markdown(html_8,unsafe_allow_html=True)
 st.markdown("")
 
-w_so=st.number_input("กรุณาเลือกข้อมูล Solids")
+w_ph=st.number_input("กรุณาเลือกข้อมูล ph")
 w_ha=st.number_input("กรุณาเลือกข้อมูล Hardness")
 w_so=st.number_input("กรุณาเลือกข้อมูล Solids")
-w_so=st.number_input("กรุณาเลือกข้อมูล Solids")
+w_ch=st.number_input("กรุณาเลือกข้อมูล Chloramines")
 w_s=st.number_input("กรุณาเลือกข้อมูล Sulfate")
 w_c=st.number_input("กรุณาเลือกข้อมูล Conductivity")
-w_Or=st.slider("กรุณาเลือกข้อมูล Organic_carbon")
-w_Tri=st.slider("กรุณาเลือกข้อมูล Trihalomethanes")
-w_Tur=st.slider("กรุณาเลือกข้อมูล Turbidity")
+w_or=st.slider("กรุณาเลือกข้อมูล Organic_carbon")
+w_tri=st.slider("กรุณาเลือกข้อมูล Trihalomethanes")
+w_tur=st.slider("กรุณาเลือกข้อมูล Turbidity")
 
 
 
