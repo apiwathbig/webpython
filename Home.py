@@ -65,9 +65,9 @@ if st.button("ทำนายผล"):
    input_data_reshaped = input_data_as_numpy_array.reshape(1,-1)
    prediction = loaded_model.predict(input_data_reshaped)
    st.write(prediction)
-   if prediction == '1':
-        st.write("ใช่ได้")
+   if prediction == '0':
+        st.write("ใช่ไม่ได้")
    else :
-        st.write("ไม่ได้")
+        st.write("ใช้ได้")
 
     
