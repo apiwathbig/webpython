@@ -6,11 +6,11 @@ import plotly.express as px
 import plotly.graph_objects as go
 import pickle
 
-st.image("./pic/banner.jpg")
+st.image("./pic/2.jpg")
 
 html_8="""
 <div style="background-color:#EE9513;padding:15px;border-radius:15px 15px 15px 15px;border-style:'solid';border-color:black">
-<center><h5>การทำนายข้อมูลดอกไม้</h5></center>
+<center><h5>การพยาการ์คุณภาพน้ำด้วย decision tree</h5></center>
 </div>
 """
 
@@ -57,8 +57,8 @@ w_tur=st.slider("กรุณาเลือกข้อมูล Turbidity")
 
 
 if st.button("ทำนายผล"):
-   loaded_model = pickle.load(open('./data/ANN.h5'))
-   input_data =  (w_ph,w_ha,w_so,w_ch,w_s,w_c,w_Or,w_Tri,w_Tur)
+   loaded_model = pickle.load(open('./data/trained_model.sav'))
+   input_data =  (w_ph,w_ha,w_so,w_ch,w_s,w_c,w_or,w_tri,w_tur)
    # changing the input_data to numpy array
    input_data_as_numpy_array = np.asarray(input_data)
     # reshape the array as we are predicting for one instance
